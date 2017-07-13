@@ -1,6 +1,19 @@
 module Models exposing (..)
 
-initialModel = 0 
+type alias TaskId =
+    String
+
+type alias TaskName =
+    String
+
+type alias Task =
+    { id : TaskId
+    , name : TaskName
+    }
 
 type alias Model =
-    Int
+    { tasks : List Task }
+
+initialModel : Model
+initialModel =
+    { tasks = [ Task "0" "No tasks" ] }
